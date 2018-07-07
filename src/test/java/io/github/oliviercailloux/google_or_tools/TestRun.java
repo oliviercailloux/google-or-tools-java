@@ -1,4 +1,4 @@
-package io.github.oliviercailloux.or_tools_embedded;
+package io.github.oliviercailloux.google_or_tools;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
