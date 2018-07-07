@@ -24,7 +24,7 @@ Here is how to re-make this project from scratch (except for the test class).
 * https://github.com/scijava/native-lib-loader 
 
 == Previous attempt
-Here is a simpler way, but which I abandoned as it does not produce source code.
+Here is a simpler way, but which I abandoned as it does not produce source code and as embedding the library is not clean.
 
 * Downloaded or-tools_Debian-9.4-64bit_v6.7.4981.tar.gz from https://github.com/google/or-tools/releases
 * (Noticed that or-tools_Debian-9.4-64bit_v6.7.4981/lib/libjniortools.so and or-tools_Ubuntu-17.10-64bit_v6.7.4981/lib/libjniortools.so differ)
