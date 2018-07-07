@@ -1,23 +1,23 @@
 = Google OR-Tools for Java
 A project to publish Google OR-Tools as a dependable dependency in Maven.
 
-== Making Google OR-Tools for Java
-This project contains no specific source code (except for a simple test). Everything comes from Google OR-Tools.
+This project contains no specific source code (except for a simple https://github.com/oliviercailloux/google-or-tools-java/blob/master/src/test/java/io/github/oliviercailloux/or_tools_embedded/TestRun.java[test] class). Everything comes from Google OR-Tools.
 
-Here is how to re-make this project from scratch.
+== Making Google OR-Tools for Java
+Here is how to re-make this project from scratch (except for the test class).
 
 * install https://developers.google.com/optimization/introduction/installing/source.html#prerequisites_linux[prerequisites]
 * set dest variable (see below)
 * clone https://github.com/google/or-tools[OR-Tools] in a folder whose full path contain no space
 * `git checkout v6.7.2`
-* make third_party
-* make java
-* mv "ortools/gen/com" "${dest}/src/main/java/"
-* rmdir "${dest}/src/main/java/com/google/ortools/flatzinc" "${dest}/src/main/java/com/google/ortools/properties" "${dest}/src/main/java/com/google/ortools/sat"
+* `make third_party`
+* `make java`
+* `mv "ortools/gen/com" "${dest}/src/main/java/"`
+* `rmdir "${dest}/src/main/java/com/google/ortools/flatzinc" "${dest}/src/main/java/com/google/ortools/properties" "${dest}/src/main/java/com/google/ortools/sat"`
 * observe that the produced library binds to the absolute path it is built in (that’s no good):
-* readelf -a lib/libjniortools.so | grep PATH
-* patchelf --set-rpath '$ORIGIN' lib/libjniortools.so
-* mv lib/*.so "${dest}/lib/"
+* `readelf -a lib/libjniortools.so | grep PATH`
+* `patchelf --set-rpath '$ORIGIN' lib/libjniortools.so`
+* `mv lib/*.so "${dest}/lib/"`
 
 == Refs
 * https://github.com/google/or-tools/issues/202 

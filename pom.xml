@@ -6,6 +6,13 @@
 	<artifactId>google-or-tools</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Google OR-Tools for Java</name>
+	<url>http://github.com/oliviercailloux/google-or-tools-java</url>
+	<licenses>
+		<license>
+			<name>Apache-2.0</name>
+			<url>https://opensource.org/licenses/Apache-2.0</url>
+		</license>
+	</licenses>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -62,4 +69,62 @@
 			</plugin>
 		</plugins>
 	</build>
+	<scm>
+		<connection>scm:git:git://github.com/oliviercailloux/google-or-tools-java.git</connection>
+		<developerConnection>scm:git:ssh://github.com/oliviercailloux/google-or-tools-java.git</developerConnection>
+		<url>http://github.com/oliviercailloux/google-or-tools-java</url>
+	</scm>
+	<developers>
+		<developer>
+			<name>Olivier Cailloux</name>
+			<email>olivier.cailloux@dauphine.fr</email>
+			<url>http://www.lamsade.dauphine.fr/~ocailloux/</url>
+			<organization>Paris-Dauphine</organization>
+			<organizationUrl>http://www.dauphine.fr</organizationUrl>
+		</developer>
+	</developers>
+	<profiles>
+		<profile>
+			<id>release</id>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+				<repository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
