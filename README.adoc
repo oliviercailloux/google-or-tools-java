@@ -1,0 +1,33 @@
+= Google OR-Tools for Java
+A project to publish Google OR-Tools as a dependable dependency in Maven.
+
+== Making Google OR-Tools for Java
+This project contains no specific source code (except for a simple test). Everything comes from Google OR-Tools.
+
+Here is how to re-make this project from scratch.
+
+* install https://developers.google.com/optimization/introduction/installing/source.html#prerequisites_linux[prerequisites]
+* set dest variable (see below)
+* clone https://github.com/google/or-tools[OR-Tools] in a folder whose full path contain no space
+* `git checkout v6.7.2`
+* make third_party
+* make java
+* mv "ortools/gen/com" "${dest}/src/main/java/"
+* rmdir "${dest}/src/main/java/com/google/ortools/flatzinc" "${dest}/src/main/java/com/google/ortools/properties" "${dest}/src/main/java/com/google/ortools/sat"
+* observe that the produced library binds to the absolute path it is built in (that’s no good):
+* readelf -a lib/libjniortools.so | grep PATH
+* patchelf --set-rpath '$ORIGIN' lib/libjniortools.so
+* mv lib/*.so "${dest}/lib/"
+
+== Refs
+* https://github.com/google/or-tools/issues/202 
+* https://github.com/scijava/native-lib-loader 
+
+== Previous attempt
+Here is a simpler way, but which I abandoned as it does not produce source code.
+
+* Downloaded or-tools_Debian-9.4-64bit_v6.7.4981.tar.gz from https://github.com/google/or-tools/releases
+* (Noticed that or-tools_Debian-9.4-64bit_v6.7.4981/lib/libjniortools.so and or-tools_Ubuntu-17.10-64bit_v6.7.4981/lib/libjniortools.so differ)
+* Extracted or-tools_Debian-9.4-64bit_v6.7.4981.tar.gz to or-tools_Debian-9.4-64bit_v6.7.4981/
+* Extracted or-tools_Debian-9.4-64bit_v6.7.4981/lib/com.google.ortools.jar to src/main/resources
+* mkdir -p src/main/resources/META-INF/lib/linux_64 ; mv or-tools_Debian-9.4-64bit_v6.7.4981/lib/libjniortools.so src/main/resources/META-INF/lib/linux_64
