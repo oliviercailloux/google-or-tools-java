@@ -1,4 +1,5 @@
 = Google OR-Tools for Java
+
 A project to publish Google OR-Tools as a dependable dependency in Maven.
 
 This project contains no specific source code (except for a simple https://github.com/oliviercailloux/google-or-tools-java/blob/master/src/test/java/io/github/oliviercailloux/google_or_tools/TestRun.java[test] class). Everything comes from Google OR-Tools.
