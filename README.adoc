@@ -15,9 +15,8 @@ Here is how to re-make this project from scratch (except for the test class).
 * `make java`
 * `mv "ortools/gen/com" "${dest}/src/main/java/"`
 * `rmdir "${dest}/src/main/java/com/google/ortools/flatzinc" "${dest}/src/main/java/com/google/ortools/properties" "${dest}/src/main/java/com/google/ortools/sat"`
-* observe that the produced library binds to the absolute path it is built in (that’s no good):
-* `readelf -a lib/libjniortools.so | grep PATH`
-* `patchelf --set-rpath '$ORIGIN' lib/libjniortools.so`
+* observe that the produced library binds to the absolute path it is built in (that’s no good): `readelf -a lib/libjniortools.so | grep PATH`
+* let’s change that: `patchelf --set-rpath '$ORIGIN' lib/libjniortools.so`
 * `mv lib/*.so "${dest}/lib/"`
 
 == Refs
