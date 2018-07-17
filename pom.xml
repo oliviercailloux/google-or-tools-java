@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.oliviercailloux</groupId>
 	<artifactId>google-or-tools</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>6.7.2-SNAPSHOT</version>
 	<name>Google OR-Tools for Java</name>
 	<url>http://github.com/oliviercailloux/google-or-tools-java</url>
 	<licenses>
