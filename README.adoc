@@ -17,6 +17,12 @@ Here is how to re-make this project from scratch (except for the test class).
 * `make java`
 * `mv "ortools/gen/com" "${dest}/src/main/java/"`
 * `rmdir "${dest}/src/main/java/com/google/ortools/flatzinc" "${dest}/src/main/java/com/google/ortools/properties" "${dest}/src/main/java/com/google/ortools/sat"`
+* Download the library for https://developers.google.com/optimization/#or-tools-downloads-for-c-java-or-c[Ubuntu 14] (the version run by Travis)
+* Extract the archive, move `or-tools_Ubuntu-14.04-64bit_v6.7.4981/lib/libortools.so` and `libjniortools.so` to `"${dest}/lib/"`
+
+=== Lib (attempt)
+Attempting to build the library (instead of downloading it) leads to Travis https://stackoverflow.com/questions/20357033/how-to-fix-program-name-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-cxx[failing] the Maven test. Here is what I tried (and abandoned).
+
 * observe that the produced library binds to the absolute path it is built in (that’s no good): `readelf -a lib/libjniortools.so | grep PATH`
 * let’s change that: `patchelf --set-rpath '$ORIGIN' lib/libjniortools.so`
 * `mv lib/*.so "${dest}/lib/"`
