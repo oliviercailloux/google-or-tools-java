@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.oliviercailloux</groupId>
 	<artifactId>google-or-tools</artifactId>
-	<version>6.7.2</version>
+	<version>6.7.2.a-SNAPSHOT</version>
 	<name>Google OR-Tools for Java</name>
 	<description>A project to publish Google OR-Tools as a dependable dependency in Maven.</description>
 	<url>http://github.com/oliviercailloux/google-or-tools-java</url>
