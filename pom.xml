@@ -6,6 +6,7 @@
 	<artifactId>google-or-tools</artifactId>
 	<version>6.7.2-SNAPSHOT</version>
 	<name>Google OR-Tools for Java</name>
+	<description>A project to publish Google OR-Tools as a dependable dependency in Maven.</description>
 	<url>http://github.com/oliviercailloux/google-or-tools-java</url>
 	<licenses>
 		<license>
@@ -13,6 +14,16 @@
 			<url>https://opensource.org/licenses/Apache-2.0</url>
 		</license>
 	</licenses>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -86,16 +97,6 @@
 	<profiles>
 		<profile>
 			<id>release</id>
-			<distributionManagement>
-				<snapshotRepository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-				</snapshotRepository>
-				<repository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-				</repository>
-			</distributionManagement>
 			<build>
 				<plugins>
 					<plugin>
@@ -106,6 +107,18 @@
 								<id>attach-sources</id>
 								<goals>
 									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.0.0</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
 								</goals>
 							</execution>
 						</executions>

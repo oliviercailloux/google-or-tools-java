@@ -1,0 +1,10 @@
+language: java
+git:
+  depth: 1
+jdk:
+- openjdk8
+dist: trusty
+cache:
+  directories:
+  - "$HOME/.m2"
+
