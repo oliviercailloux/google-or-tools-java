@@ -1,6 +1,7 @@
 = Google OR-Tools for Java
 
 image:https://travis-ci.org/oliviercailloux/google-or-tools-java.svg?branch=master["Build Status", link="https://travis-ci.org/oliviercailloux/google-or-tools-java"]
+image:https://maven-badges.herokuapp.com/maven-central/io.github.oliviercailloux/google-or-tools-java/badge.svg["Artifact on Maven Central", link="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.github.oliviercailloux%22%20a%3A%22google-or-tools-java%22"]
 
 A project to publish Google OR-Tools as a dependable dependency in Maven.
 
