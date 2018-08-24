@@ -8,7 +8,7 @@ A project to publish Google OR-Tools as a dependable dependency in Maven.
 This project contains no specific source code (except for a simple https://github.com/oliviercailloux/google-or-tools-java/blob/master/src/test/java/io/github/oliviercailloux/google_or_tools/TestRun.java[test] class). Everything comes from Google OR-Tools.
 
 == Making Google OR-Tools for Java
-Here is how to re-make this project from scratch (except for the test class).
+Here is how to re-make this project from scratch (except for the test class and `pom.xml`, which I created manually).
 
 * install https://developers.google.com/optimization/introduction/installing/source.html#prerequisites_linux[prerequisites]
 * set dest variable (see below)
