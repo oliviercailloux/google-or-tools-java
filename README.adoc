@@ -26,7 +26,7 @@ Here is how to use this project as a dependency in your own project.
 * Run the unit test using Maven, it should pass
 * To configure Eclipse so that it finds the native library, see the above section
 
-The above configures your library path correctly only for running tests. For normal operation, you will need to set your library path as well. Multiple manners exist, depending on your particular needs, how you want to distribute your project, …
+The above configures your library path correctly only for running tests. You will probably want to make sure that your library path is set correctly for normal operation as well. Multiple manners exist, depending on your particular needs, how you want to distribute your project, …
 
 == Making Google OR-Tools for Java
 Here is how to re-make this project from scratch (except for the test class and `pom.xml`, which I created manually).
