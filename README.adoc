@@ -7,6 +7,27 @@ A project to publish Google OR-Tools as a dependable dependency in Maven.
 
 This project contains no specific source code (except for a simple https://github.com/oliviercailloux/google-or-tools-java/blob/master/src/test/java/io/github/oliviercailloux/google_or_tools/TestRun.java[test] class). Everything comes from Google OR-Tools.
 
+== Testing Google OR-Tools for Java using Eclipse
+* Clone this project
+* Import your local clone in Eclipse using Maven import
+* In the project properties, `Java Build Path`, `Source` tab, `google-or-tools/src/test/java`, `Native library location`, specify as `Location path`: `google-or-tools/lib`
+* Run `io.github.oliviercailloux.google_or_tools.TestRun` as JUnit test
+* It should load the native library, run the solver, and come out green
+
+If you get problems, test it first using `mvn test` to determine if the problem is with Eclipse or somewhere else.
+
+== Depending on Google OR-Tools
+Here is how to use this project as a dependency in your own project.
+
+* Add this project as a dependency (find its Maven coordinates using the badge above) of your project
+* To configure your library path correctly for tests, configure `maven-surefire-plugin`, see this https://github.com/oliviercailloux/google-or-tools-java/blob/master/pom.xml[pom] as an example
+* Copy the https://github.com/oliviercailloux/google-or-tools-java/tree/master/lib[lib] folder of this project into your own project, or replace its content with libraries appropriate for your OS
+* Copy the https://github.com/oliviercailloux/google-or-tools-java/blob/master/src/test/java/io/github/oliviercailloux/google_or_tools/TestRun.java[test] class from this project into your own project
+* Run the unit test using Maven, it should pass
+* To configure Eclipse so that it finds the native library, see the above section
+
+The above configures your library path correctly only for running tests. For normal operation, you will need to set your library path as well. Multiple manners exist, depending on your particular needs, how you want to distribute your project, …
+
 == Making Google OR-Tools for Java
 Here is how to re-make this project from scratch (except for the test class and `pom.xml`, which I created manually).
 
