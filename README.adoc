@@ -49,17 +49,3 @@ Attempting to build the library (instead of downloading it) leads to Travis http
 * let’s change that: `patchelf --set-rpath '$ORIGIN' lib/libjniortools.so`
 * `mv lib/*.so "${dest}/lib/"`
 
-== Refs
-* https://github.com/google/or-tools/issues/202 
-* https://github.com/scijava/native-lib-loader 
-
-TODO: consider https://github.com/java-native-access/jna[]?
-
-== Previous attempt
-Here is a simpler way, but which I abandoned as it does not produce source code and as embedding the library is not clean.
-
-* Downloaded or-tools_Debian-9.4-64bit_v6.7.4981.tar.gz from https://github.com/google/or-tools/releases
-* (Noticed that or-tools_Debian-9.4-64bit_v6.7.4981/lib/libjniortools.so and or-tools_Ubuntu-17.10-64bit_v6.7.4981/lib/libjniortools.so differ)
-* Extracted or-tools_Debian-9.4-64bit_v6.7.4981.tar.gz to or-tools_Debian-9.4-64bit_v6.7.4981/
-* Extracted or-tools_Debian-9.4-64bit_v6.7.4981/lib/com.google.ortools.jar to src/main/resources
-* mkdir -p src/main/resources/META-INF/lib/linux_64 ; mv or-tools_Debian-9.4-64bit_v6.7.4981/lib/libjniortools.so src/main/resources/META-INF/lib/linux_64
