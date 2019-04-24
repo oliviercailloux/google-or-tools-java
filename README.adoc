@@ -42,10 +42,3 @@ Here is how to re-make this project from scratch (except for the test class and 
 * Download the library for https://github.com/google/or-tools/releases/tag/v6.7.2[Ubuntu 14] (this version seems to runs both on Travis and on my Debian system, probably out of pure luck)
 * Extract the archive, move `or-tools_Ubuntu-14.04-64bit_v6.7.4981/lib/libortools.so` and `libjniortools.so` to `"${dest}/lib/"`
 
-=== Lib (attempt)
-Attempting to build the library (instead of downloading it) leads to Travis https://stackoverflow.com/questions/20357033/how-to-fix-program-name-usr-lib-x86-64-linux-gnu-libstdc-so-6-version-cxx[failing] the Maven test. Here is what I tried (and abandoned). (Apparently things https://github.com/google/or-tools/issues/202#issuecomment-415739632[improved] in the meantime, but I did not investigate further.)
-
-* observe that the produced library binds to the absolute path it is built in (that’s no good): `readelf -a lib/libjniortools.so | grep PATH`
-* let’s change that: `patchelf --set-rpath '$ORIGIN' lib/libjniortools.so`
-* `mv lib/*.so "${dest}/lib/"`
-
