@@ -34,7 +34,7 @@ The above configures your library path correctly only for running tests. You wil
 == About more recent versions
 For reasons of time, I do not intend to keep this library systematically up-to-date. In other words, the version published here is older than the last version of Google OR-Tools, on which the https://developers.google.com/optimization/[developer] site is based. See also https://github.com/oliviercailloux/google-or-tools-java/issues/5[this] issue.
 
-Please do not ask for updates: I will update only as my own projects require (meaning, not often if ever). Please rather add your voice – or thumb – https://github.com/google/or-tools/issues/202[here] in hope that the main developers publish the library to Maven Central themselves. In the meantime, you can also fork this repository and update it under your own `groupId`: given the instructions below, it might (hopefully?) be easy.
+Please do not ask for updates: I will update only as my own projects require (meaning, rarely, if ever). Please rather add your voice – or thumb – https://github.com/google/or-tools/issues/202[here] in hope that the main developers publish the library to Maven Central themselves. In the meantime, you can also fork this repository and update it under your own `groupId`: given the instructions below, it might (hopefully?) be easy.
 
 == Making Google OR-Tools for Java
 Here is how to re-make this project from scratch (except for the test class and `pom.xml`, which I created manually).
