@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+coucou monde
+=======
+hello world
+>>>>>>> br1
